@@ -62,12 +62,16 @@
 
     /* Top nav */
     .top-nav {
+      position: sticky;
+      top: 0;
+      background-color: var(--background-card);
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
       margin: 20px 0 30px;
       border-bottom: 1px solid var(--border-color);
       padding-bottom: 10px;
+      z-index: 10;
     }
 
     .top-nav a {
@@ -76,12 +80,18 @@
       text-decoration: none;
       padding: 10px 14px;
       border-radius: 10px;
-      transition: background-color 0.2s ease, opacity 0.2s ease;
+      font-weight: 500;
+      transition: background-color 0.2s ease, opacity 0.2s ease, font-weight 0.2s ease;
     }
 
     .top-nav a:hover {
-      background-color: #f0f7ff;
+      background-color: rgba(0, 122, 255, 0.08);
       opacity: 0.9;
+    }
+
+    .top-nav a.active {
+      font-weight: 700;
+      background-color: rgba(0, 122, 255, 0.08);
     }
 
     h2 {
@@ -168,6 +178,7 @@
     details > div {
       overflow: hidden;
       transition: max-height var(--animation-speed) ease-out;
+      max-height: 0; /* Closed by default */
     }
 
     .legal-meta {
@@ -216,7 +227,6 @@
       <a href="#privacy">Privacy Policy</a>
     </nav>
 
-    <!-- SUPPORT -->
     <section id="support" class="section-card" aria-labelledby="support-title">
       <h2 id="support-title">Support</h2>
       <p>Welcome! We're here to help you get the most out of our app.</p>
@@ -228,7 +238,6 @@
       </div>
     </section>
 
-    <!-- FAQ -->
     <section id="faq" class="section-card" aria-labelledby="faq-title">
       <h2 id="faq-title">Frequently Asked Questions (FAQ)</h2>
 
@@ -396,11 +405,10 @@
       <p class="last-updated"><small>Last updated: <time datetime="2025-10-16">October 16, 2025</time></small></p>
     </section>
 
-    <!-- TERMS OF USE -->
     <section id="terms" class="section-card" aria-labelledby="terms-title">
       <h2 id="terms-title">Terms of Use</h2>
       <p class="legal-meta"><strong>Effective Date:</strong> October 16, 2025</p>
-      <p>Welcome to Molaanaa (“App”), provided by [Company Name] (“Company,” “we,” “us,” or “our”). These Terms of Use (“Terms”) govern your access to and use of the App and related services (collectively, the “Services”). By accessing or using the Services, you agree to be bound by these Terms. If you do not agree, do not use the Services.</p>
+      <p>Welcome to BABA (“App”), provided by Molaanaa (“Company,” “we,” “us,” or “our”). These Terms of Use (“Terms”) govern your access to and use of the App and related services (collectively, the “Services”). By accessing or using the Services, you agree to be bound by these Terms. If you do not agree, do not use the Services.</p>
 
       <h3>1. Eligibility</h3>
       <p>You must be at least the age of majority in your jurisdiction to use the Services. By using the Services, you represent and warrant that you meet this requirement and can enter a binding contract.</p>
@@ -438,17 +446,17 @@
       <p>The Services may interact with third‑party networks, APIs, or libraries. We do not control and are not responsible for third‑party content, services, or policies. Your use of third‑party services is at your own risk and subject to their terms.</p>
 
       <h3>9. Intellectual Property</h3>
-      <p>The App and its content (excluding your data and third‑party content) are owned by [Company Name] and protected by intellectual property laws. We grant you a limited, non‑exclusive, non‑transferable, revocable license to use the App for personal, lawful purposes under these Terms.</p>
+      <p>The App and its content (excluding your data and third‑party content) are owned by Molaanaa and protected by intellectual property laws. We grant you a limited, non‑exclusive, non‑transferable, revocable license to use the App for personal, lawful purposes under these Terms.</p>
 
       <h3>10. Disclaimers</h3>
       <p>THE SERVICES ARE PROVIDED “AS IS” AND “AS AVAILABLE” WITHOUT WARRANTIES OF ANY KIND, EXPRESS, IMPLIED, OR STATUTORY, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON‑INFRINGEMENT. WE DO NOT WARRANT THAT THE SERVICES WILL BE SECURE, ERROR‑FREE, OR UNINTERRUPTED.</p>
 
       <h3>11. Limitation of Liability</h3>
-      <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT WILL [COMPANY NAME] OR ITS AFFILIATES, DIRECTORS, OFFICERS, EMPLOYEES, OR AGENTS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS, DATA, USE, OR GOODWILL, ARISING OUT OF OR RELATED TO YOUR USE OF OR INABILITY TO USE THE SERVICES, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+      <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT WILL Molaanaa OR ITS AFFILIATES, DIRECTORS, OFFICERS, EMPLOYEES, OR AGENTS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS, DATA, USE, OR GOODWILL, ARISING OUT OF OR RELATED TO YOUR USE OF OR INABILITY TO USE THE SERVICES, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
       <p>OUR TOTAL LIABILITY FOR ANY CLAIMS ARISING OUT OF OR RELATED TO THE SERVICES WILL NOT EXCEED THE GREATER OF (A) THE AMOUNT YOU PAID TO US FOR THE SERVICES IN THE TWELVE (12) MONTHS PRECEDING THE EVENT GIVING RISE TO THE CLAIM, OR (B) USD $50.</p>
 
       <h3>12. Indemnification</h3>
-      <p>You agree to defend, indemnify, and hold harmless [Company Name] and its affiliates, directors, officers, employees, and agents from claims, liabilities, damages, losses, and expenses (including reasonable attorneys’ fees) arising out of your use of the Services, your violation of these Terms, or your violation of any rights of another.</p>
+      <p>You agree to defend, indemnify, and hold harmless Molaanaa and its affiliates, directors, officers, employees, and agents from claims, liabilities, damages, losses, and expenses (including reasonable attorneys’ fees) arising out of your use of the Services, your violation of these Terms, or your violation of any rights of another.</p>
 
       <h3>13. Termination</h3>
       <p>We may suspend or terminate your access to the Services at any time, with or without cause or notice, including if we believe you have violated these Terms. Upon termination, your right to use the Services will immediately cease.</p>
@@ -460,20 +468,15 @@
       <p>These Terms are governed by the laws of [Governing Jurisdiction], without regard to conflict of law principles. You agree to the exclusive jurisdiction and venue of the courts in [Venue] for disputes arising out of or relating to these Terms or the Services.</p>
 
       <h3>16. Contact Us</h3>
-      <p>Questions about these Terms? Contact us at <a href="mailto:[Contact Email]">[Contact Email]</a> or:</p>
-      <address>
-        [Company Name]<br/>
-        [Company Address]
-      </address>
+      <p>Questions about these Terms? Contact us at <a href="mailto:support@molaanaa.com">support@molaanaa.com</a>.</p>
 
       <p class="last-updated"><small>Last updated: October 16, 2025</small></p>
     </section>
 
-    <!-- PRIVACY POLICY -->
     <section id="privacy" class="section-card" aria-labelledby="privacy-title">
       <h2 id="privacy-title">Privacy Policy</h2>
       <p class="legal-meta"><strong>Effective Date:</strong> October 16, 2025</p>
-      <p>This Privacy Policy describes how [Company Name] (“Company,” “we,” “us,” or “our”) collects, uses, shares, and protects information in connection with Molaanaa (“App”) and related services (collectively, “Services”).</p>
+      <p>This Privacy Policy describes how Molaanaa (“Company,” “we,” “us,” or “our”) collects, uses, shares, and protects information in connection with BABA (“App”) and related services (collectively, “Services”).</p>
 
       <h3>1. Summary</h3>
       <ul>
@@ -528,7 +531,7 @@
       <h3>7. Your Rights and Choices</h3>
       <ul>
         <li><strong>Device settings:</strong> Control diagnostics sharing or analytics via device/platform settings (e.g., iOS privacy settings).</li>
-        <li><strong>Access, correction, deletion:</strong> Depending on your location, you may have rights to request access to, correction of, or deletion of certain information. Contact us at <a href="mailto:[Contact Email]">[Contact Email]</a>.</li>
+        <li><strong>Access, correction, deletion:</strong> Depending on your location, you may have rights to request access to, correction of, or deletion of certain information. Contact us at <a href="mailto:support@molaanaa.com">support@molaanaa.com</a>.</li>
         <li><strong>Opt‑out of marketing:</strong> If we send marketing communications, you may opt out via unsubscribe links or by contacting us.</li>
       </ul>
       <p>We will not ask for or accept your private key for support. Do not share it with us.</p>
@@ -546,70 +549,65 @@
       <p>We may update this Privacy Policy from time to time. If we make material changes, we will update the “Effective Date” and may provide additional notice. Your continued use after changes become effective constitutes acceptance.</p>
 
       <h3>12. Contact Us</h3>
-      <p>Questions about this Privacy Policy or our data practices? Contact us at <a href="mailto:[Contact Email]">[Contact Email]</a> or:</p>
-      <address>
-        [Company Name]<br/>
-        [Company Address]
-      </address>
+      <p>Questions about this Privacy Policy or our data practices? Contact us at <a href="mailto:support@molaanaa.com">support@molaanaa.com</a>.</p>
 
       <p class="last-updated"><small>Last updated: October 16, 2025</small></p>
     </section>
   </div>
 
   <script>
-    // Animate <details> open/close and set max-height for smooth transitions
-    document.querySelectorAll('details').forEach((detail) => {
-      const summary = detail.querySelector('summary');
-      const content = detail.querySelector('div');
-
-      // Initialize closed height
-      if (!detail.hasAttribute('open') && content) {
-        content.style.maxHeight = '0px';
-      } else if (content) {
-        content.style.maxHeight = content.scrollHeight + 'px';
+    // Accordion Animation for <details>
+    document.querySelectorAll('details').forEach(detail => {
+      // Set initial max-height for any details element that is open on page load
+      if (detail.open) {
+        const content = detail.querySelector('div');
+        if (content) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+        }
       }
 
-      summary.addEventListener('click', (event) => {
-        event.preventDefault();
+      const summary = detail.querySelector('summary');
+      summary.addEventListener('click', event => {
+        event.preventDefault(); // Prevent default toggle to control animation
+        const content = detail.querySelector('div');
         if (!content) return;
 
         if (detail.open) {
-          // closing
-          content.style.maxHeight = content.scrollHeight + 'px'; // set to current to enable transition
-          requestAnimationFrame(() => {
-            content.style.maxHeight = '0px';
-          });
-          setTimeout(() => {
+          // Animate closed
+          content.style.maxHeight = content.scrollHeight + 'px';
+          requestAnimationFrame(() => content.style.maxHeight = '0px');
+          content.addEventListener('transitionend', () => {
             detail.removeAttribute('open');
-          }, 300); // match CSS var --animation-speed
+          }, { once: true });
         } else {
-          // opening
+          // Animate open
           detail.setAttribute('open', '');
-          content.style.maxHeight = '0px';
-          requestAnimationFrame(() => {
-            content.style.maxHeight = content.scrollHeight + 'px';
-          });
+          requestAnimationFrame(() => content.style.maxHeight = content.scrollHeight + 'px');
         }
       });
     });
 
-    // Optional: highlight active nav link on scroll
-    const sections = [...document.querySelectorAll('section[id]')];
-    const navLinks = [...document.querySelectorAll('.top-nav a')];
+    // Highlight active nav link on scroll using Intersection Observer
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.top-nav a');
+    const observerOptions = {
+      root: null, // relative to the viewport
+      rootMargin: '-40% 0px -60% 0px', // trigger when section is in the upper-middle of the screen
+      threshold: 0
+    };
 
-    function onScroll() {
-      const scrollPos = window.scrollY + 120; // offset for header
-      let current = sections[0].id;
-      sections.forEach(sec => {
-        const top = sec.offsetTop;
-        if (scrollPos >= top) current = sec.id;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navLinks.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+          });
+        }
       });
-      navLinks.forEach(link => {
-        link.style.fontWeight = link.getAttribute('href') === '#' + current ? '700' : '500';
-      });
-    }
-    document.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+    }, observerOptions);
+
+    sections.forEach(section => observer.observe(section));
   </script>
 </body>
 </html>
