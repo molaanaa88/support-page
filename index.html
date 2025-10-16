@@ -5,54 +5,144 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Molaanaa App - Support</title>
     <style>
+        :root {
+            --brand-color: #007AFF;
+            --background-light: #f8f9fa;
+            --background-card: #ffffff;
+            --text-primary: #212529;
+            --text-secondary: #6c757d;
+            --border-color: #e9ecef;
+            --shadow-color: rgba(0, 0, 0, 0.08);
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f8f9fa;
-            color: #333;
+            background-color: var(--background-light);
+            color: var(--text-primary);
             margin: 0;
-            padding: 20px;
+            padding: 40px 20px;
             display: flex;
             justify-content: center;
         }
+
         .container {
             max-width: 800px;
             width: 100%;
-            background: #fff;
+            background: var(--background-card);
             padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            border-radius: 16px;
+            box-shadow: 0 8px 30px var(--shadow-color);
         }
+
         h1 {
-            font-size: 2.5em;
+            font-size: 2.8em;
             margin-bottom: 10px;
+            background: linear-gradient(45deg, #007AFF, #00C6FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
+
         h2 {
             font-size: 1.8em;
-            border-bottom: 2px solid #eee;
+            border-bottom: 1px solid var(--border-color);
             padding-bottom: 10px;
-            margin-top: 40px;
+            margin-top: 50px;
+            margin-bottom: 25px;
         }
-        h3 {
-            font-size: 1.2em;
-            margin-top: 30px;
-        }
+
         p, li {
-            line-height: 1.7;
+            line-height: 1.8;
             font-size: 1.1em;
+            color: var(--text-secondary);
         }
+        
+        strong {
+             color: var(--text-primary);
+        }
+
         a {
-            color: #007AFF;
+            color: var(--brand-color);
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+
+        a:hover {
+            opacity: 0.7;
             text-decoration: none;
         }
-        a:hover {
-            text-decoration: underline;
-        }
+
         .contact-box {
             background-color: #f1f1f1;
-            border-radius: 8px;
-            padding: 20px;
-            margin-top: 20px;
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 30px;
         }
+        .contact-box h2 {
+            margin-top: 0;
+            border-bottom: none;
+        }
+
+        /* --- FAQ Styling --- */
+        #faq {
+            margin-top: 40px;
+        }
+        
+        details {
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
+        }
+
+        details:last-of-type {
+            border-bottom: none;
+        }
+
+        summary {
+            font-size: 1.2em;
+            font-weight: 500;
+            cursor: pointer;
+            list-style: none; /* Remove default marker */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.2s ease;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        summary:hover {
+            background-color: #f8f9fa;
+        }
+
+        /* Custom rotating chevron icon */
+        summary::after {
+            content: '›';
+            font-size: 2em;
+            font-weight: bold;
+            color: var(--brand-color);
+            transform: rotate(90deg);
+            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        details[open] > summary::after {
+            transform: rotate(270deg);
+        }
+
+        /* Hide the default arrow in Safari/Chrome */
+        summary::-webkit-details-marker {
+            display: none;
+        }
+        
+        /* Content inside the details tag */
+        details > div {
+            padding: 20px 10px 0 10px;
+        }
+        
+        .last-updated {
+            text-align: center;
+            margin-top: 40px;
+            color: #aaa;
+        }
+
     </style>
 </head>
 <body>
@@ -67,199 +157,79 @@
         </div>
 
         <section id="faq" aria-labelledby="faq-title">
-  <h2 id="faq-title">Frequently Asked Questions (FAQ)</h2>
+            <h2 id="faq-title">Frequently Asked Questions (FAQ)</h2>
 
-  <!-- What the app does -->
-  <details>
-    <summary><h3>What does this app do?</h3></summary>
-    <p>
-      This app is a non-custodial wallet for managing your <strong>CS (Credits)</strong> accounts.
-      You can create a new wallet, import an existing one using your private key, view balances,
-      rename accounts, reorder them, and switch between accounts quickly.
-    </p>
-  </details>
+            <details>
+                <summary>What does this app do?</summary>
+                <div>
+                    <p>This app is a non-custodial wallet for managing your <strong>CS (Credits)</strong> accounts. You can create a new wallet, import an existing one using your private key, view balances, rename accounts, reorder them, and switch between accounts quickly.</p>
+                </div>
+            </details>
+            
+            <details>
+                <summary>How do I create a new wallet?</summary>
+                <div>
+                    <ol>
+                        <li>Open the app and go to <em>Accounts</em>.</li>
+                        <li>Tap the <strong>+</strong> button and choose <strong>Create New Wallet</strong>.</li>
+                        <li>Confirm creation and <strong>back up your private key immediately</strong>.</li>
+                    </ol>
+                    <p><strong>Important:</strong> Anyone with your private key can access your funds. Store it in a secure, offline place.</p>
+                </div>
+            </details>
 
-  <!-- Getting started -->
-  <details>
-    <summary><h3>How do I create a new wallet?</h3></summary>
-    <ol>
-      <li>Open the app and go to <em>Accounts</em>.</li>
-      <li>Tap the <strong>+</strong> button and choose <strong>Create New Wallet</strong>.</li>
-      <li>Confirm creation and <strong>back up your private key immediately</strong>.</li>
-    </ol>
-    <p>
-      Important: Anyone with your private key can access your funds. Store it in a secure, offline place.
-    </p>
-  </details>
+            <details>
+                <summary>How do I import an existing wallet?</summary>
+                <div>
+                    <ol>
+                        <li>Open the app and go to <em>Accounts</em>.</li>
+                        <li>Tap the <strong>+</strong> button and select <strong>Add Existing Account</strong>.</li>
+                        <li>Paste your <strong>Base58-encoded private key</strong> and confirm.</li>
+                    </ol>
+                    <p>If you see an “Invalid Private Key” message, ensure the key is correctly copied, in Base58 format, and includes all characters. Try pasting again from your original backup.</p>
+                </div>
+            </details>
 
-  <details>
-    <summary><h3>How do I import an existing wallet?</h3></summary>
-    <ol>
-      <li>Open the app and go to <em>Accounts</em>.</li>
-      <li>Tap the <strong>+</strong> button and select <strong>Add Existing Account</strong>.</li>
-      <li>Paste your <strong>Base58-encoded private key</strong> and confirm.</li>
-    </ol>
-    <p>
-      If you see an “Invalid Private Key” message, ensure the key is correctly copied, in Base58 format,
-      and includes all characters. Try pasting again from your original backup.
-    </p>
-  </details>
+            <details>
+                <summary>Where can I find your Privacy Policy and Terms?</summary>
+                <div>
+                    <ul>
+                        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="/terms.html">Terms of Use</a></li>
+                    </ul>
+                </div>
+            </details>
 
-  <!-- Accounts management -->
-  <details>
-    <summary><h3>Can I have multiple accounts?</h3></summary>
-    <p>
-      Yes. You can create or import multiple accounts and switch between them from the <em>Accounts</em> screen.
-      Tap an account to make it your active account.
-    </p>
-  </details>
+            <p class="last-updated"><small>Last updated: <time datetime="2025-10-16">October 16, 2025</time></small></p>
+        </section>
+    </div>
 
-  <details>
-    <summary><h3>How do I rename an account?</h3></summary>
-    <ol>
-      <li>Go to <em>Accounts</em> and tap <strong>Edit</strong>.</li>
-      <li>Tap the <strong>pencil</strong> icon next to the account you want to rename.</li>
-      <li>Enter a new name (up to 10 characters) and tap <strong>Save</strong>.</li>
-    </ol>
-    <p>
-      Names are stored locally on your device to help you organize your accounts.
-    </p>
-  </details>
+    <script>
+        document.querySelectorAll('details').forEach((detail) => {
+            const summary = detail.querySelector('summary');
+            const content = detail.querySelector('div');
 
-  <details>
-    <summary><h3>How do I reorder my accounts?</h3></summary>
-    <ol>
-      <li>Go to <em>Accounts</em> and tap <strong>Edit</strong>.</li>
-      <li>Use the <strong>up/down arrows</strong> to move accounts.</li>
-      <li>Tap <strong>Done</strong> to save your preferred order.</li>
-    </ol>
-  </details>
+            summary.addEventListener('click', (event) => {
+                if (detail.open) {
+                    event.preventDefault(); // Prevent closing immediately
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    requestAnimationFrame(() => {
+                        content.style.maxHeight = '0px';
+                        setTimeout(() => { detail.removeAttribute('open'); }, 300);
+                    });
+                } else {
+                    detail.setAttribute('open', '');
+                    content.style.maxHeight = '0px';
+                    requestAnimationFrame(() => {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                    });
+                }
+            });
 
-  <details>
-    <summary><h3>What do the numbers next to accounts mean?</h3></summary>
-    <p>
-      The number on the left (e.g., “1.”, “2.”) shows the position of the account in your custom order.
-      The checkmark indicates the currently selected account.
-    </p>
-  </details>
-
-  <!-- Balances and display -->
-  <details>
-    <summary><h3>Why do balances show K/M/B (e.g., 1.2K, 3.4M)?</h3></summary>
-    <p>
-      To keep things concise, balances are shown in a compact format:
-      <strong>K</strong> = thousands, <strong>M</strong> = millions, <strong>B</strong> = billions.
-      For very small balances, the app may show “&lt;0.0001”.
-    </p>
-  </details>
-
-  <details>
-    <summary><h3>How often are balances updated?</h3></summary>
-    <p>
-      Balances are fetched when you open the Accounts view and may refresh periodically.
-      If something looks out of date, try reopening the Accounts screen or ensuring you have a stable internet connection.
-    </p>
-  </details>
-
-  <!-- Security and privacy -->
-  <details>
-    <summary><h3>Is my data private?</h3></summary>
-    <p>
-      Your account names and ordering are stored locally on your device. Your private key is sensitive:
-      never share it with anyone. For full details on data handling, please review our
-      <a href="/privacy-policy.html">Privacy Policy</a>.
-    </p>
-  </details>
-
-  <details>
-    <summary><h3>Where is my private key stored?</h3></summary>
-    <p>
-      Your private key is handled locally on your device. We strongly recommend you keep an offline backup
-      and never store it in plain text or share it through messaging apps or email.
-    </p>
-  </details>
-
-  <details>
-    <summary><h3>What happens if I lose my device?</h3></summary>
-    <p>
-      If you lose access to your device, you can recover your wallet by installing the app on a new device
-      and importing your private key. Without the private key, funds cannot be recovered.
-    </p>
-  </details>
-
-  <!-- Troubleshooting -->
-  <details>
-    <summary><h3>I see “Invalid Private Key.” What should I do?</h3></summary>
-    <ul>
-      <li>Confirm the key is Base58-encoded and complete (no missing or extra characters).</li>
-      <li>Paste directly from your original backup source.</li>
-      <li>Try again and ensure there are no spaces or line breaks.</li>
-    </ul>
-  </details>
-
-  <details>
-    <summary><h3>My balance looks wrong or isn’t updating. How can I fix it?</h3></summary>
-    <ul>
-      <li>Reopen the <em>Accounts</em> screen to trigger a refresh.</li>
-      <li>Check your internet connection.</li>
-      <li>Force-quit and relaunch the app.</li>
-      <li>If the issue persists, contact support with your public key (never your private key).</li>
-    </ul>
-  </details>
-
-  <!-- Costs and fees -->
-  <details>
-    <summary><h3>Are there any fees?</h3></summary>
-    <p>
-      Network fees may apply when sending transactions on the Credits network. These fees are determined by the network
-      and are not collected by the app. Check your transaction details before confirming.
-    </p>
-  </details>
-
-  <!-- General app management -->
-  <details>
-    <summary><h3>How do I switch accounts?</h3></summary>
-    <p>
-      Go to <em>Accounts</em> and tap the account you want to use. A checkmark will indicate the selected account.
-    </p>
-  </details>
-
-  <details>
-    <summary><h3>Can I remove an account from the app?</h3></summary>
-    <p>
-      You can remove an account by clearing it from your device (if the app provides a remove option) and then re-importing later if needed.
-      Always ensure you have a secure backup of your private key before removing an account.
-    </p>
-  </details>
-
-  <!-- Subscriptions / Purchases (edit as applicable) -->
-  <details>
-    <summary><h3>Does the app require a subscription?</h3></summary>
-    <p>
-      This app does not require a subscription to manage your wallet. If you purchased premium features through the App Store,
-      you can manage or cancel them in your device’s <em>Settings &gt; Apple ID &gt; Subscriptions</em>.
-    </p>
-  </details>
-
-  <!-- Support -->
-  <details>
-    <summary><h3>How can I contact support?</h3></summary>
-    <p>
-      Email us at <a href="mailto:support@yourapp.com">support@yourapp.com</a>.
-      For faster help, include your app version, device model, and your <strong>public key</strong> (never your private key).
-    </p>
-  </details>
-
-  <!-- Legal -->
-  <details>
-    <summary><h3>Where can I find your Privacy Policy and Terms?</h3></summary>
-    <ul>
-      <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-      <li><a href="/terms.html">Terms of Use</a></li>
-    </ul>
-  </details>
-
-  <p class="last-updated"><small>Last updated: <time datetime="2025-10-16">October 16, 2025</time></small></p>
-</section>
+            // Set the transition style via JS to keep CSS clean
+            content.style.overflow = 'hidden';
+            content.style.transition = 'max-height 0.3s ease-out';
+        });
+    </script>
 </body>
 </html>
