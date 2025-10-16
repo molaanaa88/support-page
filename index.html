@@ -1,363 +1,615 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Molaanaa App - Support</title>
-    <style>
-        :root {
-            --brand-color: #007AFF;
-            --background-light: #f8f9fa;
-            --background-card: #ffffff;
-            --text-primary: #212529;
-            --text-secondary: #495057; /* Darkened for better readability */
-            --border-color: #e9ecef;
-            --shadow-color: rgba(0, 0, 0, 0.08);
-            --animation-speed: 0.3s;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Molaanaa App — Support, Terms, and Privacy</title>
+  <meta name="description" content="Support, FAQ, Terms of Use, and Privacy Policy for Molaanaa (BABA) App">
+  <style>
+    :root {
+      --brand-color: #007AFF;
+      --background-light: #f8f9fa;
+      --background-card: #ffffff;
+      --text-primary: #212529;
+      --text-secondary: #495057;
+      --border-color: #e9ecef;
+      --shadow-color: rgba(0, 0, 0, 0.08);
+      --animation-speed: 0.3s;
+    }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--background-light);
-            color: var(--text-primary);
-            margin: 0;
-            padding: 40px 20px;
-            display: flex;
-            justify-content: center;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        .container {
-            max-width: 800px;
-            width: 100%;
-            background: var(--background-card);
-            padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 8px 30px var(--shadow-color);
-        }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--background-light);
+      color: var(--text-primary);
+      margin: 0;
+      padding: 40px 20px 80px;
+      display: flex;
+      justify-content: center;
+    }
 
-        h1 {
-            font-size: 2.8em;
-            margin-bottom: 10px;
-            background: linear-gradient(45deg, #007AFF, #00C6FF);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+    .container {
+      max-width: 1000px;
+      width: 100%;
+      background: var(--background-card);
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px var(--shadow-color);
+    }
 
-        h2 {
-            font-size: 1.8em;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 10px;
-            margin-top: 50px;
-            margin-bottom: 25px;
-        }
+    header.page-header {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
 
-        p, li {
-            line-height: 1.8;
-            font-size: 1.1em;
-            color: var(--text-secondary);
-        }
-        
-        strong {
-             color: var(--text-primary);
-        }
+    h1 {
+      font-size: 2.6em;
+      margin: 0;
+      background: linear-gradient(45deg, #007AFF, #00C6FF);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-        a {
-            color: var(--brand-color);
-            text-decoration: none;
-            transition: opacity 0.2s ease;
-        }
+    .tagline {
+      color: var(--text-secondary);
+      margin: 0;
+    }
 
-        a:hover {
-            opacity: 0.7;
-        }
+    /* Top nav */
+    .top-nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 20px 0 30px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 10px;
+    }
 
-        .contact-box {
-            background-color: #f0f7ff; /* Lighter, brand-aligned blue */
-            border: 1px solid #cce4ff;
-            border-radius: 12px;
-            padding: 25px;
-            margin-top: 30px;
-        }
-        .contact-box h2 {
-            margin-top: 0;
-            border-bottom: none;
-        }
+    .top-nav a {
+      display: inline-block;
+      color: var(--brand-color);
+      text-decoration: none;
+      padding: 10px 14px;
+      border-radius: 10px;
+      transition: background-color 0.2s ease, opacity 0.2s ease;
+    }
 
-        /* --- FAQ Styling --- */
-        #faq {
-            margin-top: 40px;
-        }
-        
-        details {
-            border-bottom: 1px solid var(--border-color);
-            padding: 15px 0;
-        }
+    .top-nav a:hover {
+      background-color: #f0f7ff;
+      opacity: 0.9;
+    }
 
-        details:last-of-type {
-            border-bottom: none;
-        }
+    h2 {
+      font-size: 1.9em;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 10px;
+      margin-top: 50px;
+      margin-bottom: 25px;
+    }
 
-        summary {
-            font-size: 1.2em;
-            font-weight: 500;
-            cursor: pointer;
-            list-style: none; /* Remove default marker */
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background-color 0.2s ease;
-            padding: 10px;
-            border-radius: 8px;
-        }
+    h3 {
+      margin-top: 24px;
+      margin-bottom: 10px;
+    }
 
-        summary:hover {
-            background-color: #f8f9fa;
-        }
+    p, li {
+      line-height: 1.8;
+      font-size: 1.05em;
+      color: var(--text-secondary);
+    }
 
-        summary::-webkit-details-marker {
-            display: none; /* Hide the default arrow in Safari/Chrome */
-        }
+    strong { color: var(--text-primary); }
 
-        /* Custom rotating chevron icon */
-        summary::after {
-            content: '›';
-            font-size: 2em;
-            font-weight: bold;
-            color: var(--brand-color);
-            transform: rotate(90deg);
-            transition: transform var(--animation-speed) cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
+    a {
+      color: var(--brand-color);
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
 
-        details[open] > summary::after {
-            transform: rotate(270deg);
-        }
-        
-        /* Animation container for content */
-        details > div {
-            overflow: hidden;
-            transition: max-height var(--animation-speed) ease-out;
-        }
-        
-        .last-updated {
-            text-align: center;
-            margin-top: 40px;
-            color: #aaa;
-        }
-    </style>
+    a:hover { opacity: 0.7; }
+
+    .contact-box {
+      background-color: #f0f7ff;
+      border: 1px solid #cce4ff;
+      border-radius: 12px;
+      padding: 25px;
+      margin-top: 20px;
+    }
+
+    .contact-box h2 {
+      margin-top: 0;
+      border-bottom: none;
+    }
+
+    /* FAQ */
+    #faq { margin-top: 20px; }
+
+    details {
+      border-bottom: 1px solid var(--border-color);
+      padding: 15px 0;
+    }
+
+    details:last-of-type { border-bottom: none; }
+
+    summary {
+      font-size: 1.15em;
+      font-weight: 600;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.2s ease;
+      padding: 10px;
+      border-radius: 8px;
+      color: var(--text-primary);
+    }
+
+    summary:hover { background-color: #f8f9fa; }
+
+    summary::-webkit-details-marker { display: none; }
+
+    summary::after {
+      content: '›';
+      font-size: 2em;
+      font-weight: bold;
+      color: var(--brand-color);
+      transform: rotate(90deg);
+      transition: transform var(--animation-speed) cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    details[open] > summary::after { transform: rotate(270deg); }
+
+    details > div {
+      overflow: hidden;
+      transition: max-height var(--animation-speed) ease-out;
+    }
+
+    .legal-meta {
+      color: #6c757d;
+      margin-bottom: 16px;
+    }
+
+    .last-updated {
+      text-align: center;
+      margin-top: 40px;
+      color: #aaa;
+    }
+
+    /* Cards for sections */
+    .section-card {
+      background: #fff;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 8px 30px var(--shadow-color);
+    }
+
+    .section-card + .section-card {
+      margin-top: 24px;
+    }
+
+    /* Responsive */
+    @media (max-width: 680px) {
+      .container { padding: 24px; }
+      .top-nav { gap: 6px; }
+      .top-nav a { padding: 8px 10px; }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Molaanaa - BABA App Support</h1>
-        <p>Welcome! We're here to help you get the most out of our app.</p>
+  <div class="container">
+    <header class="page-header">
+      <h1>Molaanaa — BABA App Support & Legal</h1>
+      <p class="tagline">Everything in one place: FAQs, Contact, Terms of Use, and Privacy Policy.</p>
+    </header>
 
-        <div class="contact-box">
-            <h2>Contact Us</h2>
-            <p>The best way to reach us is by email. We aim to respond within 24 hours.</p>
-            <p><strong>Email:</strong> <a href="mailto:support@molaanaa.com">support@molaanaa.com</a></p>
+    <nav class="top-nav" aria-label="Section navigation">
+      <a href="#support">Support</a>
+      <a href="#faq">FAQ</a>
+      <a href="#terms">Terms of Use</a>
+      <a href="#privacy">Privacy Policy</a>
+    </nav>
+
+    <!-- SUPPORT -->
+    <section id="support" class="section-card" aria-labelledby="support-title">
+      <h2 id="support-title">Support</h2>
+      <p>Welcome! We're here to help you get the most out of our app.</p>
+
+      <div class="contact-box" aria-labelledby="contact-title">
+        <h3 id="contact-title">Contact Us</h3>
+        <p>The best way to reach us is by email. We aim to respond within 24 hours.</p>
+        <p><strong>Email:</strong> <a href="mailto:support@molaanaa.com">support@molaanaa.com</a></p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section-card" aria-labelledby="faq-title">
+      <h2 id="faq-title">Frequently Asked Questions (FAQ)</h2>
+
+      <details>
+        <summary>What does this app do?</summary>
+        <div>
+          <p>This app is a non-custodial wallet for managing your <strong>CS (Credits)</strong> accounts. You can create a new wallet, import an existing one using your private key, view balances, rename accounts, reorder them, and switch between accounts quickly.</p>
         </div>
+      </details>
 
-        <section id="faq" aria-labelledby="faq-title">
-            <h2 id="faq-title">Frequently Asked Questions (FAQ)</h2>
+      <details>
+        <summary>How do I create a new wallet?</summary>
+        <div>
+          <ol>
+            <li>Open the app and go to <em>Accounts</em>.</li>
+            <li>Tap the <strong>+</strong> button and choose <strong>Create New Wallet</strong>.</li>
+            <li>Confirm creation and <strong>back up your private key immediately</strong>.</li>
+          </ol>
+          <p><strong>Important:</strong> Anyone with your private key can access your funds. Store it in a secure, offline place.</p>
+        </div>
+      </details>
 
-            <details>
-                <summary>What does this app do?</summary>
-                <div>
-                    <p>This app is a non-custodial wallet for managing your <strong>CS (Credits)</strong> accounts. You can create a new wallet, import an existing one using your private key, view balances, rename accounts, reorder them, and switch between accounts quickly.</p>
-                </div>
-            </details>
-            
-            <details>
-                <summary>How do I create a new wallet?</summary>
-                <div>
-                    <ol>
-                        <li>Open the app and go to <em>Accounts</em>.</li>
-                        <li>Tap the <strong>+</strong> button and choose <strong>Create New Wallet</strong>.</li>
-                        <li>Confirm creation and <strong>back up your private key immediately</strong>.</li>
-                    </ol>
-                    <p><strong>Important:</strong> Anyone with your private key can access your funds. Store it in a secure, offline place.</p>
-                </div>
-            </details>
+      <details>
+        <summary>How do I import an existing wallet?</summary>
+        <div>
+          <ol>
+            <li>Open the app and go to <em>Accounts</em>.</li>
+            <li>Tap the <strong>+</strong> button and select <strong>Add Existing Account</strong>.</li>
+            <li>Paste your <strong>Base58-encoded private key</strong> and confirm.</li>
+          </ol>
+          <p>If you see an “Invalid Private Key” message, ensure the key is correctly copied, in Base58 format, and includes all characters. Try pasting again from your original backup.</p>
+        </div>
+      </details>
 
-            <details>
-                <summary>How do I import an existing wallet?</summary>
-                <div>
-                    <ol>
-                        <li>Open the app and go to <em>Accounts</em>.</li>
-                        <li>Tap the <strong>+</strong> button and select <strong>Add Existing Account</strong>.</li>
-                        <li>Paste your <strong>Base58-encoded private key</strong> and confirm.</li>
-                    </ol>
-                    <p>If you see an “Invalid Private Key” message, ensure the key is correctly copied, in Base58 format, and includes all characters. Try pasting again from your original backup.</p>
-                </div>
-            </details>
-            
-            <details>
-                <summary>Can I have multiple accounts?</summary>
-                <div>
-                    <p>Yes. You can create or import multiple accounts and switch between them from the <em>Accounts</em> screen. Tap an account to make it your active account.</p>
-                </div>
-            </details>
-            
-            <details>
-                <summary>How do I rename an account?</summary>
-                <div>
-                    <ol>
-                        <li>Go to <em>Accounts</em> and tap <strong>Edit</strong>.</li>
-                        <li>Tap the <strong>pencil</strong> icon next to the account you want to rename.</li>
-                        <li>Enter a new name (up to 10 characters) and tap <strong>Save</strong>.</li>
-                    </ol>
-                    <p>Names are stored locally on your device to help you organize your accounts.</p>
-                </div>
-            </details>
+      <details>
+        <summary>Can I have multiple accounts?</summary>
+        <div>
+          <p>Yes. You can create or import multiple accounts and switch between them from the <em>Accounts</em> screen. Tap an account to make it your active account.</p>
+        </div>
+      </details>
 
-            <details>
-                <summary>How do I reorder my accounts?</summary>
-                <div>
-                    <ol>
-                        <li>Go to <em>Accounts</em> and tap <strong>Edit</strong>.</li>
-                        <li>Use the <strong>up/down arrows</strong> to move accounts.</li>
-                        <li>Tap <strong>Done</strong> to save your preferred order.</li>
-                    </ol>
-                </div>
-            </details>
+      <details>
+        <summary>How do I rename an account?</summary>
+        <div>
+          <ol>
+            <li>Go to <em>Accounts</em> and tap <strong>Edit</strong>.</li>
+            <li>Tap the <strong>pencil</strong> icon next to the account you want to rename.</li>
+            <li>Enter a new name (up to 10 characters) and tap <strong>Save</strong>.</li>
+          </ol>
+          <p>Names are stored locally on your device to help you organize your accounts.</p>
+        </div>
+      </details>
 
-            <details>
-                <summary>What do the numbers next to accounts mean?</summary>
-                <div>
-                    <p>The number on the left (e.g., “1.”, “2.”) shows the position of the account in your custom order. The checkmark indicates the currently selected account.</p>
-                </div>
-            </details>
-            
-            <details>
-                <summary>Why do balances show K/M/B (e.g., 1.2K, 3.4M)?</summary>
-                <div>
-                    <p>To keep things concise, balances are shown in a compact format: <strong>K</strong> = thousands, <strong>M</strong> = millions, <strong>B</strong> = billions. For very small balances, the app may show “&lt;0.0001”.</p>
-                </div>
-            </details>
+      <details>
+        <summary>How do I reorder my accounts?</summary>
+        <div>
+          <ol>
+            <li>Go to <em>Accounts</em> and tap <strong>Edit</strong>.</li>
+            <li>Use the <strong>up/down arrows</strong> to move accounts.</li>
+            <li>Tap <strong>Done</strong> to save your preferred order.</li>
+          </ol>
+        </div>
+      </details>
 
-            <details>
-                <summary>How often are balances updated?</summary>
-                <div>
-                    <p>Balances are fetched when you open the Accounts view and may refresh periodically. If something looks out of date, try reopening the Accounts screen or ensuring you have a stable internet connection.</p>
-                </div>
-            </details>
+      <details>
+        <summary>What do the numbers next to accounts mean?</summary>
+        <div>
+          <p>The number on the left (e.g., “1.”, “2.”) shows the position of the account in your custom order. The checkmark indicates the currently selected account.</p>
+        </div>
+      </details>
 
-            <details>
-                <summary>Is my data private?</summary>
-                <div>
-                    <p>Your account names and ordering are stored locally on your device. Your private key is sensitive: never share it with anyone. For full details on data handling, please review our <a href="/privacy-policy.html">Privacy Policy</a>.</p>
-                </div>
-            </details>
+      <details>
+        <summary>Why do balances show K/M/B (e.g., 1.2K, 3.4M)?</summary>
+        <div>
+          <p>To keep things concise, balances are shown in a compact format: <strong>K</strong> = thousands, <strong>M</strong> = millions, <strong>B</strong> = billions. For very small balances, the app may show “&lt;0.0001”.</p>
+        </div>
+      </details>
 
-            <details>
-                <summary>Where is my private key stored?</summary>
-                <div>
-                    <p>Your private key is handled locally on your device. We strongly recommend you keep an offline backup and never store it in plain text or share it through messaging apps or email.</p>
-                </div>
-            </documents>
+      <details>
+        <summary>How often are balances updated?</summary>
+        <div>
+          <p>Balances are fetched when you open the Accounts view and may refresh periodically. If something looks out of date, try reopening the Accounts screen or ensuring you have a stable internet connection.</p>
+        </div>
+      </details>
 
-            <details>
-                <summary>What happens if I lose my device?</summary>
-                <div>
-                    <p>If you lose access to your device, you can recover your wallet by installing the app on a new device and importing your private key. Without the private key, funds cannot be recovered.</p>
-                </div>
-            </details>
+      <details>
+        <summary>Is my data private?</summary>
+        <div>
+          <p>Your account names and ordering are stored locally on your device. Your private key is sensitive: never share it with anyone. For full details on data handling, see our <a href="#privacy">Privacy Policy</a>.</p>
+        </div>
+      </details>
 
-            <details>
-                <summary>I see “Invalid Private Key.” What should I do?</summary>
-                <div>
-                    <ul>
-                        <li>Confirm the key is Base58-encoded and complete (no missing or extra characters).</li>
-                        <li>Paste directly from your original backup source.</li>
-                        <li>Try again and ensure there are no spaces or line breaks.</li>
-                    </ul>
-                </div>
-            </details>
+      <details>
+        <summary>Where is my private key stored?</summary>
+        <div>
+          <p>Your private key is handled locally on your device. We strongly recommend you keep an offline backup and never store it in plain text or share it through messaging apps or email.</p>
+        </div>
+      </details>
 
-            <details>
-                <summary>My balance looks wrong or isn’t updating. How can I fix it?</summary>
-                <div>
-                    <ul>
-                        <li>Reopen the <em>Accounts</em> screen to trigger a refresh.</li>
-                        <li>Check your internet connection.</li>
-                        <li>Force-quit and relaunch the app.</li>
-                        <li>If the issue persists, contact support with your public key (never your private key).</li>
-                    </ul>
-                </div>
-            </details>
+      <details>
+        <summary>What happens if I lose my device?</summary>
+        <div>
+          <p>If you lose access to your device, you can recover your wallet by installing the app on a new device and importing your private key. Without the private key, funds cannot be recovered.</p>
+        </div>
+      </details>
 
-            <details>
-                <summary>Are there any fees?</summary>
-                <div>
-                    <p>Network fees may apply when sending transactions on the Credits network. These fees are determined by the network and are not collected by the app. Check your transaction details before confirming.</p>
-                </div>
-            </details>
+      <details>
+        <summary>I see “Invalid Private Key.” What should I do?</summary>
+        <div>
+          <ul>
+            <li>Confirm the key is Base58-encoded and complete (no missing or extra characters).</li>
+            <li>Paste directly from your original backup source.</li>
+            <li>Try again and ensure there are no spaces or line breaks.</li>
+          </ul>
+        </div>
+      </details>
 
-            <details>
-                <summary>How do I switch accounts?</summary>
-                <div>
-                    <p>Go to <em>Accounts</em> and tap the account you want to use. A checkmark will indicate the selected account.</p>
-                </div>
-            </details>
+      <details>
+        <summary>My balance looks wrong or isn’t updating. How can I fix it?</summary>
+        <div>
+          <ul>
+            <li>Reopen the <em>Accounts</em> screen to trigger a refresh.</li>
+            <li>Check your internet connection.</li>
+            <li>Force-quit and relaunch the app.</li>
+            <li>If the issue persists, contact support with your public key (never your private key).</li>
+          </ul>
+        </div>
+      </details>
 
-            <details>
-                <summary>Can I remove an account from the app?</summary>
-                <div>
-                    <p>You can remove an account by clearing it from your device (if the app provides a remove option) and then re-importing later if needed. Always ensure you have a secure backup of your private key before removing an account.</p>
-                </div>
-            </details>
+      <details>
+        <summary>Are there any fees?</summary>
+        <div>
+          <p>Network fees may apply when sending transactions on the Credits network. These fees are determined by the network and are not collected by the app. Check your transaction details before confirming.</p>
+        </div>
+      </details>
 
-            <details>
-                <summary>Does the app require a subscription?</summary>
-                <div>
-                    <p>This app does not require a subscription to manage your wallet. If you purchased premium features through the App Store, you can manage or cancel them in your device’s <em>Settings &gt; Apple ID &gt; Subscriptions</em>.</p>
-                </div>
-            </details>
+      <details>
+        <summary>How do I switch accounts?</summary>
+        <div>
+          <p>Go to <em>Accounts</em> and tap the account you want to use. A checkmark will indicate the selected account.</p>
+        </div>
+      </details>
 
-            <details>
-                <summary>How can I contact support?</summary>
-                <div>
-                    <p>Email us at <a href="mailto:support@molaanaa.com">support@molaanaa.com</a>. For faster help, include your app version, device model, and your <strong>public key</strong> (never your private key).</p>
-                </div>
-            </details>
+      <details>
+        <summary>Can I remove an account from the app?</summary>
+        <div>
+          <p>You can remove an account by clearing it from your device (if the app provides a remove option) and then re-importing later if needed. Always ensure you have a secure backup of your private key before removing an account.</p>
+        </div>
+      </details>
 
-            <details>
-                <summary>Where can I find your Privacy Policy and Terms?</summary>
-                <div>
-                    <ul>
-                        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="/terms.html">Terms of Use</a></li>
-                    </ul>
-                </div>
-            </details>
+      <details>
+        <summary>Does the app require a subscription?</summary>
+        <div>
+          <p>This app does not require a subscription to manage your wallet. If you purchased premium features through the App Store, you can manage or cancel them in your device’s <em>Settings &gt; Apple ID &gt; Subscriptions</em>.</p>
+        </div>
+      </details>
 
-            <p class="last-updated"><small>Last updated: <time datetime="2025-10-16">October 16, 2025</time></small></p>
-        </section>
-    </div>
+      <details>
+        <summary>How can I contact support?</summary>
+        <div>
+          <p>Email us at <a href="mailto:support@molaanaa.com">support@molaanaa.com</a>. For faster help, include your app version, device model, and your <strong>public key</strong> (never your private key).</p>
+        </div>
+      </details>
 
-    <script>
-        document.querySelectorAll('details').forEach((detail) => {
-            const summary = detail.querySelector('summary');
-            const content = detail.querySelector('div');
-            
-            // Prevent the default open/close behavior
-            summary.addEventListener('click', (event) => {
-                event.preventDefault();
+      <p class="last-updated"><small>Last updated: <time datetime="2025-10-16">October 16, 2025</time></small></p>
+    </section>
 
-                if (detail.open) {
-                    // Start the closing animation
-                    content.style.maxHeight = '0px';
-                    // Wait for animation to finish before removing 'open' attribute
-                    setTimeout(() => {
-                        detail.removeAttribute('open');
-                    }, 300); // Must match --animation-speed in CSS
-                } else {
-                    // Open the details element first
-                    detail.setAttribute('open', '');
-                    // Then start the opening animation
-                    content.style.maxHeight = content.scrollHeight + 'px';
-                }
-            });
-        });
-    </script>
+    <!-- TERMS OF USE -->
+    <section id="terms" class="section-card" aria-labelledby="terms-title">
+      <h2 id="terms-title">Terms of Use</h2>
+      <p class="legal-meta"><strong>Effective Date:</strong> October 16, 2025</p>
+      <p>Welcome to Molaanaa (“App”), provided by [Company Name] (“Company,” “we,” “us,” or “our”). These Terms of Use (“Terms”) govern your access to and use of the App and related services (collectively, the “Services”). By accessing or using the Services, you agree to be bound by these Terms. If you do not agree, do not use the Services.</p>
+
+      <h3>1. Eligibility</h3>
+      <p>You must be at least the age of majority in your jurisdiction to use the Services. By using the Services, you represent and warrant that you meet this requirement and can enter a binding contract.</p>
+
+      <h3>2. Non‑Custodial Wallet</h3>
+      <p>The App is a <strong>non‑custodial</strong> wallet. You control your private keys and are solely responsible for safeguarding them. We do not store, access, or recover your private keys. If you lose your private key or passcode, we cannot help recover your funds.</p>
+
+      <h3>3. No Financial, Investment, or Legal Advice</h3>
+      <p>Information provided by the App is for informational purposes only and does not constitute financial, investment, legal, or tax advice. You are solely responsible for your decisions and assume all risks.</p>
+
+      <h3>4. Risks</h3>
+      <p>Using blockchain technologies involves risks, including market volatility, smart‑contract vulnerabilities, network congestion or failure, and loss of private keys. You acknowledge and accept these risks. We are not responsible for losses including funds, data, or opportunities.</p>
+
+      <h3>5. Your Responsibilities</h3>
+      <ul>
+        <li>Safeguard your device, private keys, and any backup phrases or credentials.</li>
+        <li>Verify addresses and transaction details before sending.</li>
+        <li>Comply with applicable laws and regulations.</li>
+        <li>Use the App lawfully and in accordance with these Terms.</li>
+      </ul>
+
+      <h3>6. Prohibited Uses</h3>
+      <ul>
+        <li>Unlawful, fraudulent, or harmful activities.</li>
+        <li>Interfering with or disrupting the Services.</li>
+        <li>Unauthorized access attempts to the Services or systems.</li>
+        <li>Reverse engineering the App, except as permitted by law.</li>
+        <li>Infringing or violating others’ rights.</li>
+      </ul>
+
+      <h3>7. Fees and Purchases</h3>
+      <p>Transactions on the Credits network may incur network fees set by the network, not by us. The App may offer optional premium features or in‑app purchases processed by Apple’s App Store, subject to Apple’s terms. Manage or cancel subscriptions via your device’s Settings &gt; Apple ID &gt; Subscriptions.</p>
+
+      <h3>8. Third‑Party Services</h3>
+      <p>The Services may interact with third‑party networks, APIs, or libraries. We do not control and are not responsible for third‑party content, services, or policies. Your use of third‑party services is at your own risk and subject to their terms.</p>
+
+      <h3>9. Intellectual Property</h3>
+      <p>The App and its content (excluding your data and third‑party content) are owned by [Company Name] and protected by intellectual property laws. We grant you a limited, non‑exclusive, non‑transferable, revocable license to use the App for personal, lawful purposes under these Terms.</p>
+
+      <h3>10. Disclaimers</h3>
+      <p>THE SERVICES ARE PROVIDED “AS IS” AND “AS AVAILABLE” WITHOUT WARRANTIES OF ANY KIND, EXPRESS, IMPLIED, OR STATUTORY, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON‑INFRINGEMENT. WE DO NOT WARRANT THAT THE SERVICES WILL BE SECURE, ERROR‑FREE, OR UNINTERRUPTED.</p>
+
+      <h3>11. Limitation of Liability</h3>
+      <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT WILL [COMPANY NAME] OR ITS AFFILIATES, DIRECTORS, OFFICERS, EMPLOYEES, OR AGENTS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS, DATA, USE, OR GOODWILL, ARISING OUT OF OR RELATED TO YOUR USE OF OR INABILITY TO USE THE SERVICES, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+      <p>OUR TOTAL LIABILITY FOR ANY CLAIMS ARISING OUT OF OR RELATED TO THE SERVICES WILL NOT EXCEED THE GREATER OF (A) THE AMOUNT YOU PAID TO US FOR THE SERVICES IN THE TWELVE (12) MONTHS PRECEDING THE EVENT GIVING RISE TO THE CLAIM, OR (B) USD $50.</p>
+
+      <h3>12. Indemnification</h3>
+      <p>You agree to defend, indemnify, and hold harmless [Company Name] and its affiliates, directors, officers, employees, and agents from claims, liabilities, damages, losses, and expenses (including reasonable attorneys’ fees) arising out of your use of the Services, your violation of these Terms, or your violation of any rights of another.</p>
+
+      <h3>13. Termination</h3>
+      <p>We may suspend or terminate your access to the Services at any time, with or without cause or notice, including if we believe you have violated these Terms. Upon termination, your right to use the Services will immediately cease.</p>
+
+      <h3>14. Changes to the Services and Terms</h3>
+      <p>We may modify or discontinue the Services at any time. We may update these Terms from time to time. If we make material changes, we will update the “Effective Date” or provide notice by other appropriate means. Your continued use constitutes acceptance.</p>
+
+      <h3>15. Governing Law; Dispute Resolution</h3>
+      <p>These Terms are governed by the laws of [Governing Jurisdiction], without regard to conflict of law principles. You agree to the exclusive jurisdiction and venue of the courts in [Venue] for disputes arising out of or relating to these Terms or the Services.</p>
+
+      <h3>16. Contact Us</h3>
+      <p>Questions about these Terms? Contact us at <a href="mailto:[Contact Email]">[Contact Email]</a> or:</p>
+      <address>
+        [Company Name]<br/>
+        [Company Address]
+      </address>
+
+      <p class="last-updated"><small>Last updated: October 16, 2025</small></p>
+    </section>
+
+    <!-- PRIVACY POLICY -->
+    <section id="privacy" class="section-card" aria-labelledby="privacy-title">
+      <h2 id="privacy-title">Privacy Policy</h2>
+      <p class="legal-meta"><strong>Effective Date:</strong> October 16, 2025</p>
+      <p>This Privacy Policy describes how [Company Name] (“Company,” “we,” “us,” or “our”) collects, uses, shares, and protects information in connection with Molaanaa (“App”) and related services (collectively, “Services”).</p>
+
+      <h3>1. Summary</h3>
+      <ul>
+        <li>The App is a <strong>non‑custodial</strong> wallet. Your private keys are generated and stored locally on your device. We do not have access to or store your private keys.</li>
+        <li>Account names and ordering are saved locally on your device to help you organize accounts.</li>
+        <li>We do not sell your personal information.</li>
+        <li>If we collect diagnostics or analytics, they are used to improve app performance and reliability (see below). Update this section to reflect your actual practices.</li>
+      </ul>
+
+      <h3>2. Information We Collect</h3>
+      <h4>2.1 Information You Provide</h4>
+      <ul>
+        <li><strong>Account data (local only):</strong> Optional account names and account order you set within the App are stored locally on your device. We do not receive these by default.</li>
+        <li><strong>Support communications:</strong> If you email us or contact support, we may receive your email address, message content, and any information you choose to provide (e.g., your public key for troubleshooting). Do not send us your private key.</li>
+      </ul>
+
+      <h4>2.2 Information Collected Automatically</h4>
+      <ul>
+        <li><strong>Device and usage data (App):</strong> We may collect limited diagnostic information (e.g., crash logs, performance metrics) to maintain and improve the App. This may be provided via Apple’s developer tools or your device’s settings, subject to your consent and platform controls.</li>
+        <li><strong>Network interactions:</strong> To display balances or broadcast transactions, the App communicates with the Credits network or related endpoints. Requests may include your public key, transaction data, and standard network metadata (e.g., IP address) necessary to fulfill the request.</li>
+      </ul>
+
+      <h4>2.3 Information from Third Parties</h4>
+      <p>We may receive limited information from third‑party services we integrate with (e.g., crash reporting or analytics providers), subject to their privacy policies. We do not receive private keys from any third party.</p>
+
+      <h3>3. How We Use Information</h3>
+      <ul>
+        <li>To operate, maintain, and improve the App and Services.</li>
+        <li>To provide customer support and respond to inquiries.</li>
+        <li>To monitor performance, troubleshoot issues, and enhance reliability and security.</li>
+        <li>To comply with legal obligations and enforce our Terms.</li>
+      </ul>
+
+      <h3>4. How We Share Information</h3>
+      <ul>
+        <li><strong>Service providers:</strong> We may share limited information with vendors performing services on our behalf (e.g., crash analytics), under confidentiality and data protection obligations.</li>
+        <li><strong>Legal requirements:</strong> We may disclose information if required by law or to protect our rights, safety, or property, or that of users or the public.</li>
+        <li><strong>Business transfers:</strong> In a merger, acquisition, or asset sale, information may be transferred, subject to this Privacy Policy.</li>
+      </ul>
+      <p>We do not sell your personal information.</p>
+
+      <h3>5. Data Storage and Security</h3>
+      <ul>
+        <li><strong>Private keys:</strong> Generated and stored locally on your device. We do not store or have access to your private keys. You are responsible for backing up your keys securely.</li>
+        <li><strong>Local settings:</strong> Account names and ordering are stored locally on your device. Clearing the App or device may remove this data.</li>
+        <li><strong>Security:</strong> We implement reasonable technical and organizational measures to protect information. However, no method of transmission or storage is completely secure.</li>
+      </ul>
+
+      <h3>6. Data Retention</h3>
+      <p>We retain information as long as necessary to provide the Services, comply with legal obligations, resolve disputes, and enforce agreements. Local device data persists until you delete it or uninstall the App.</p>
+
+      <h3>7. Your Rights and Choices</h3>
+      <ul>
+        <li><strong>Device settings:</strong> Control diagnostics sharing or analytics via device/platform settings (e.g., iOS privacy settings).</li>
+        <li><strong>Access, correction, deletion:</strong> Depending on your location, you may have rights to request access to, correction of, or deletion of certain information. Contact us at <a href="mailto:[Contact Email]">[Contact Email]</a>.</li>
+        <li><strong>Opt‑out of marketing:</strong> If we send marketing communications, you may opt out via unsubscribe links or by contacting us.</li>
+      </ul>
+      <p>We will not ask for or accept your private key for support. Do not share it with us.</p>
+
+      <h3>8. Children’s Privacy</h3>
+      <p>The Services are not directed to children under the age of 13 (or the age of digital consent in your jurisdiction). We do not knowingly collect personal information from children. If you believe a child has provided us with personal information, please contact us to request deletion.</p>
+
+      <h3>9. International Users</h3>
+      <p>If you access the Services from outside your country, information may be processed and stored in jurisdictions with different data protection laws. By using the Services, you consent to such transfers, in accordance with applicable law.</p>
+
+      <h3>10. Third‑Party Services and Links</h3>
+      <p>The Services may contain links to third‑party websites or services. We are not responsible for their privacy practices. Review their privacy policies.</p>
+
+      <h3>11. Changes to This Privacy Policy</h3>
+      <p>We may update this Privacy Policy from time to time. If we make material changes, we will update the “Effective Date” and may provide additional notice. Your continued use after changes become effective constitutes acceptance.</p>
+
+      <h3>12. Contact Us</h3>
+      <p>Questions about this Privacy Policy or our data practices? Contact us at <a href="mailto:[Contact Email]">[Contact Email]</a> or:</p>
+      <address>
+        [Company Name]<br/>
+        [Company Address]
+      </address>
+
+      <p class="last-updated"><small>Last updated: October 16, 2025</small></p>
+    </section>
+  </div>
+
+  <script>
+    // Animate <details> open/close and set max-height for smooth transitions
+    document.querySelectorAll('details').forEach((detail) => {
+      const summary = detail.querySelector('summary');
+      const content = detail.querySelector('div');
+
+      // Initialize closed height
+      if (!detail.hasAttribute('open') && content) {
+        content.style.maxHeight = '0px';
+      } else if (content) {
+        content.style.maxHeight = content.scrollHeight + 'px';
+      }
+
+      summary.addEventListener('click', (event) => {
+        event.preventDefault();
+        if (!content) return;
+
+        if (detail.open) {
+          // closing
+          content.style.maxHeight = content.scrollHeight + 'px'; // set to current to enable transition
+          requestAnimationFrame(() => {
+            content.style.maxHeight = '0px';
+          });
+          setTimeout(() => {
+            detail.removeAttribute('open');
+          }, 300); // match CSS var --animation-speed
+        } else {
+          // opening
+          detail.setAttribute('open', '');
+          content.style.maxHeight = '0px';
+          requestAnimationFrame(() => {
+            content.style.maxHeight = content.scrollHeight + 'px';
+          });
+        }
+      });
+    });
+
+    // Optional: highlight active nav link on scroll
+    const sections = [...document.querySelectorAll('section[id]')];
+    const navLinks = [...document.querySelectorAll('.top-nav a')];
+
+    function onScroll() {
+      const scrollPos = window.scrollY + 120; // offset for header
+      let current = sections[0].id;
+      sections.forEach(sec => {
+        const top = sec.offsetTop;
+        if (scrollPos >= top) current = sec.id;
+      });
+      navLinks.forEach(link => {
+        link.style.fontWeight = link.getAttribute('href') === '#' + current ? '700' : '500';
+      });
+    }
+    document.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  </script>
 </body>
 </html>
